@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+   function updateLastActivityTime() {
+  // Update user's last activity time
+  console.log(' before creating post 4:Wed feb 14/2 2023');
+  // Replace with your own implementation
+}
+
+function createPost() {
+  // Create a new post
+  console.log('Creating post...');
+  // Replace with your own implementation
+  return Promise.resolve();
+}
+
+function createFourPosts() {
+  // Update last activity time
+  updateLastActivityTime();
+
+  // Create four posts
+  const createPostPromises = [];
+  for (let i = 1; i <= 4; i++) {
+    createPostPromises.push(createPost());
+  }
+
+  // Wait for all post creation promises to resolve
+  return Promise.all(createPostPromises);
+}
+
+// Call function to create four posts
+createFourPosts()
+  .then((result) => {
+    console.log(`Posts created: ${result.length}`);
+    console.log(`User last activity time: ${new Date().toLocaleString()}`);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+
+</script>
+</html>
